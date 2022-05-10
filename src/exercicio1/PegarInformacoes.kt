@@ -13,15 +13,27 @@ class PegarInformacoes {
         println("---------------------------------------------")
 
         println("Deseja registrar o nome? ([S] Sim // [N] Não)")
-        val escolhaNome = readln()
+        var escolhaNome = readln()
+        when(escolhaNome){
+            "s" -> escolhaNome = "S"
+            "n" -> escolhaNome = "N"
+        }
 
         println("----------------------------------------------------")
         println("Deseja registrar a pessoa autora? ([S] Sim // [N] Não)")
-        val escolhaPessoaAutora = readln()
+        var escolhaPessoaAutora = readln()
+        when(escolhaPessoaAutora){
+            "s" -> escolhaPessoaAutora = "S"
+            "n" -> escolhaPessoaAutora = "N"
+        }
 
         println("----------------------------------------------------")
         println("Deseja registrar o genêro? ([S] Sim // [N] Não)")
-        val escolhaGenero = readln()
+        var escolhaGenero = readln()
+        when(escolhaGenero){
+            "s" -> escolhaGenero = "S"
+            "n" -> escolhaGenero = "N"
+        }
 
         isbn = pegarISBN()
 
@@ -44,15 +56,15 @@ class PegarInformacoes {
             objetoLivro.registrarLivro(isbn, nomeLivro)
         } else if (escolhaNome == "S" && escolhaPessoaAutora == "N" && escolhaGenero == "S"){
             when(genero){
-                "C" -> objetoCientifico.registrarComGenero(isbn, nomeLivro)
-                "F" -> objetoFiccao.registrarComGenero(isbn, nomeLivro)
-                "R" -> objetoRomance.registrarComGenero(isbn, nomeLivro)
+                "C", "c" -> objetoCientifico.registrarComGenero(isbn, nomeLivro)
+                "F", "f"-> objetoFiccao.registrarComGenero(isbn, nomeLivro)
+                "R", "r" -> objetoRomance.registrarComGenero(isbn, nomeLivro)
             }
         } else if (escolhaNome == "S" && escolhaPessoaAutora == "S" && escolhaGenero == "S"){
             when(genero){
-                "C" -> objetoCientifico.registrarTudo(isbn, nomeLivro, pessoaAutora)
-                "F" -> objetoFiccao.registrarTudo(isbn, nomeLivro, pessoaAutora)
-                "R" -> objetoRomance.registrarTudo(isbn, nomeLivro, pessoaAutora)
+                "C", "c" -> objetoCientifico.registrarTudo(isbn, nomeLivro, pessoaAutora)
+                "F", "f" -> objetoFiccao.registrarTudo(isbn, nomeLivro, pessoaAutora)
+                "R", "r" -> objetoRomance.registrarTudo(isbn, nomeLivro, pessoaAutora)
             }
         }
     }
@@ -85,7 +97,9 @@ class PegarInformacoes {
 
         val escolha = readln()
 
-        while (escolha != "C" && escolha != "F" && escolha != "R") {
+        while (escolha != "C" && escolha!= "c"
+            && escolha != "F" && escolha != "f"
+            && escolha != "R" && escolha != "r") {
             println("Escolha Inválida. Tente novamente.")
             pegarGenero()
         }
