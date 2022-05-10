@@ -14,7 +14,9 @@ class Cadastro {
         println("----------------------------------------------------")
         marca = readln()
 
-        if (marca != "F" && marca != "H" && marca != "R") {
+        if (marca != "F" && marca != "f"
+            && marca != "H" && marca != "h"
+            && marca != "R" && marca != "r") {
             println("Escolha Inválida. Tente novamente.")
             pegarMarca()
         }
@@ -59,9 +61,9 @@ class Cadastro {
 
         println("----------------------------------------------------")
         when(marca){
-            "F" -> objetoCarro.mostrarInfoCarro("FIAT", pegarAno(), pegarCor(), pegarPortas(), pegarValor())
-            "H" -> objetoCarro.mostrarInfoCarro("HYUNDAI", pegarAno(), pegarCor(), pegarPortas(), pegarValor())
-            "R" -> objetoCarro.mostrarInfoCarro("RENAULT", pegarAno(), pegarCor(), pegarPortas(), pegarValor())
+            "F", "f" -> objetoCarro.mostrarInfoCarro("FIAT", pegarAno(), pegarCor(), pegarPortas(), pegarValor())
+            "H", "h" -> objetoCarro.mostrarInfoCarro("HYUNDAI", pegarAno(), pegarCor(), pegarPortas(), pegarValor())
+            "R", "r" -> objetoCarro.mostrarInfoCarro("RENAULT", pegarAno(), pegarCor(), pegarPortas(), pegarValor())
         }
         println("----------------------------------------------------")
     }
@@ -72,11 +74,11 @@ class Cadastro {
         val escolha = readln()
 
         when (escolha) {
-            "S" -> {
+            "S", "s" -> {
                 objetoTestDrive.introducao()
                 objetoTestDrive.carroEscolhido(marca)
             }
-            "N" -> {
+            "N", "n" -> {
                 exitProcess(0)
             }
             else -> {
