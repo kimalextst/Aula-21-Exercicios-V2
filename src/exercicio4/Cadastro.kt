@@ -18,16 +18,8 @@ class Cadastro {
 
     fun criarConta(){
         pegarTipoConta()
-        when (conta) {
-            "C" -> {
-                saldoInicial()
-            }
-            "P" -> {
-                saldo = 0.0
-            }
-            "S" -> {
-                saldo = 1212.0
-            }
+        if(conta == "C" || conta == "c") {
+            saldoInicial()
         }
 
         verificacaoObjeto()
@@ -50,7 +42,9 @@ class Cadastro {
         println("----------------------------------------------------")
         conta = readln()
 
-        if (conta != "C" && conta != "P" && conta != "S"){
+        if (conta != "C" && conta != "c"
+            && conta != "P" && conta != "p"
+            && conta != "S" && conta != "s"){
             println("Escolha inválida, tente novamente")
             pegarTipoConta()
         }
@@ -66,9 +60,9 @@ class Cadastro {
 
     private fun verificacaoObjeto() {
         when (conta) {
-            "C" -> objetoConta = ContaCorrente(saldoAtual = saldo)
-            "P" -> objetoConta = ContaPoupanca(saldoAtual = saldo)
-            "S" -> objetoConta = ContaSalario(saldoAtual = saldo, nome = nome)
+            "C", "c" -> objetoConta = ContaCorrente(saldoAtual = saldo)
+            "P", "p" -> objetoConta = ContaPoupanca()
+            "S", "s" -> objetoConta = ContaSalario(nome = nome)
         }
         objetoOperacoes = Operacoes(objetoConta)
     }

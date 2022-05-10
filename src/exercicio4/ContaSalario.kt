@@ -3,7 +3,7 @@ package exercicio4
 class ContaSalario (
     private var deposito : Double = 0.0,
     private var saque : Double = 0.0,
-    private var saldoAtual : Double = 0.0,
+    private var saldoAtual : Double = 1212.00,
     private var nome : String = ""
 ) : Conta() {
 
