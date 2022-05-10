@@ -6,11 +6,6 @@ open class Animal(
     private val pessoaTutora: String
         ){
 
-    protected open fun acoes(){
-        movimentar()
-        comer()
-        dormir()
-    }
     protected open fun movimentar(): String {
         return ""
     }

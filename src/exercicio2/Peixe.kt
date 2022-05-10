@@ -9,9 +9,10 @@ class Peixe(
     pessoaTutora = pessoaTutoraParametro
 ){
     fun acoes(){
-        movimentar()
-        comer()
-        dormir()
+        println("-----------------------------------------------------------------")
+        println(movimentar())
+        println(comer())
+        println(dormir())
     }
 
     override fun movimentar(): String {

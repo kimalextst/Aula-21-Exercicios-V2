@@ -8,10 +8,11 @@ class Cachorro(
     raca = "Cachorro",
     pessoaTutora = pessoaTutoraParametro
 )  {
-    override fun acoes(){
-        movimentar()
-        comer()
-        dormir()
+    fun acoes(){
+        println("-----------------------------------------------------------------")
+        println(movimentar())
+        println(comer())
+        println(dormir())
     }
 
     override fun movimentar(): String {

@@ -35,7 +35,9 @@ class Cadastro{
         println("-----------------------------------------------------------------")
         val escolha = readln()
 
-        if (escolha != "C" && escolha != "G" && escolha != "P") {
+        if (escolha != "C" && escolha!= "c"
+            && escolha != "G" && escolha != "g"
+            && escolha != "P" && escolha != "p") {
             println("Escolha Inválida. Tente novamente.")
             especieAnimal()
         }
@@ -49,15 +51,15 @@ class Cadastro{
         val objetoPeixe : Peixe = Peixe(nomeParametro = nomeAnimal, pessoaTutoraParametro = objetoCliente.nome)
 
         when (escolha){
-            "C" -> {
+            "C", "c" -> {
                 objetoCachorro.mostrarInfoAnimal()
                 objetoCachorro.acoes()
             }
-            "G" -> {
+            "G", "g" -> {
                 objetoGato.mostrarInfoAnimal()
                 objetoGato.acoes()
             }
-            "P" -> {
+            "P", "p" -> {
                 objetoPeixe.mostrarInfoAnimal()
                 objetoPeixe.acoes()
             }
@@ -70,10 +72,10 @@ class Cadastro{
         val escolha = readln()
 
         when (escolha) {
-            "S" -> {
+            "S", "s" -> {
                 main()
             }
-            "N" -> {
+            "N", "n" -> {
                 exitProcess(0)
             }
             else -> {
