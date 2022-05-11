@@ -13,9 +13,9 @@ class TestDrive {
 
     fun carroEscolhido(marca: String) {
         when(marca){
-            "F" -> objetoCarro = Fiat()
-            "H" -> objetoCarro = Hyundai()
-            "R" -> objetoCarro = Renault()
+            "F", "f" -> objetoCarro = Fiat()
+            "H", "h" -> objetoCarro = Hyundai()
+            "R", "r" -> objetoCarro = Renault()
         }
     }
 
